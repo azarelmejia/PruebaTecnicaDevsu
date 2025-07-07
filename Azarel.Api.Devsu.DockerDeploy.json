@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "cc5ea85a-0bbd-45cd-a707-b6c2ecb186fa",
+		"name": "Azarel.Api.Devsu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2382561"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Ciente obtener",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://projectclient-production.up.railway.app/clientes/leer",
+							"protocol": "https",
+							"host": [
+								"projectclient-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"clientes",
+								"leer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente crear",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identificacion\": \"0801196107890\",\n    \"users\": \"osandres\",\n    \"pass\": \"123\",\n    \"fechaRegistro\": \"2025-08-04T12:00:00\",\n    \"tipo_cliente\": \"regular\",\n    \"estado\": \"activo\",\n    \"apellido\":\"Mejia Sandres\",\n    \"nombre\":\"Oscar\",\n    \"edad\":\"64\",\n    \"direccion\":\"Santa Ana Tegucigalpa\",\n    \"telefono\":\"98751803\",\n    \"estado_civil\":\"Soltero\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://projectclient-production.up.railway.app/clientes/crear",
+							"protocol": "https",
+							"host": [
+								"projectclient-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"clientes",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente actualizar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idcliente\": 5,\n    \"identificacion\": \"0801199303049\",\n    \"users\": \"amejia5\",\n    \"pass\": \"123\",\n    \"fechaRegistro\": null,\n    \"tipoCliente\": \"Natural\",\n    \"estado\": \"activo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/actualizar/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"actualizar",
+								"5"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Persona Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"identificacion\": \"0801199303049\",\n  \"nombre\": \"Azarel\",\n  \"apellido\": \"Mejia\",\n  \"edad\": 31,\n  \"direccion\": \"Calle Principal Av Repblica de CHile\",\n  \"telefono\": \"598751803\",\n  \"estado\": \"activo\",\n  \"estadoCivil\": \"soltero\",\n  \"users\":\"amejia\",\n  \"pass\": \"123\",\n  \"tipoCliente\":\"Natural\",\n  \"estadoCliente\": \"activo\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/personas/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Persona",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personas/leer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"leer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Crear cuenta",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"idCliente\": 1,\n  \"tipoCuenta\": {\n    \"id\": 1\n  },\n  \"saldoInicial\": 0,\n  \"saldoDisponible\": 0,\n  \"estado\": \"Activo\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://projectbalances-production.up.railway.app/api/cuentas/crear",
+							"protocol": "https",
+							"host": [
+								"projectbalances-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"cuentas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movimientos cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://projectbalances-production.up.railway.app/api/cuentas/movimientos?fechaInicio=2025-07-04&fechaFin=2025-07-07&clienteId=2",
+							"protocol": "https",
+							"host": [
+								"projectbalances-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"cuentas",
+								"movimientos"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2025-07-04"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2025-07-07"
+								},
+								{
+									"key": "clienteId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Transaccion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numCuenta\": 100004, \n  \"cuenta\": {\n    \"numeroCuenta\":100004\n  },                     // ID o número de la cuenta\n  \"monto\": 11500.50,                         // Valor en decimal\n  \"tipoTransaccion\": \"Deposito\",            // Tipo de transacción\n  \"fecha\": \"2025-07-06\",                    // Formato LocalDate (yyyy-MM-dd)\n  \"creado\": \"2025-07-06T02:15:30\",          // Formato LocalDateTime (ISO 8601)\n  \"descripciontrx\": \"Cuota Terreno\"      // Descripción de la transacción\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://projectbalances-production.up.railway.app/api/cuentas/creartrx",
+							"protocol": "https",
+							"host": [
+								"projectbalances-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"cuentas",
+								"creartrx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
